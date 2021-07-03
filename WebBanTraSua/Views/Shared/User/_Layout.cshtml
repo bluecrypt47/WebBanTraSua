@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="eCommerce HTML Template Free Download" name="keywords">
+    <meta content="eCommerce HTML Template Free Download" name="description">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Itim|Lobster|Montserrat:500|Noto+Serif|Nunito|Patrick+Hand|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab|Saira" rel="stylesheet">
+    <!-- Favicon -->
+    <link href="~/Content/assets/img/favicon.ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="~/Content/assets/lib/slick/slick.css" rel="stylesheet">
+    <link href="~/Content/assets/lib/slick/slick-theme.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top bar Start -->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <i class="fa fa-envelope"></i> thanhhung041100@gmail.com
+                </div>
+                <div class="col-sm-6">
+                    <i class="fa fa-phone-alt"></i> +0783727238
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top bar End -->
+    <!-- Nav Bar Start -->
+    <!-- Nav Bar End -->
+    <!-- Bottom Bar Start -->
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-2">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1>HHT</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="nav">
+                        <div class="container-fluid">
+                            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                                    <div class="navbar-nav mr-auto">
+                                        <a href="index.html" class="nav-item nav-link active">TRANG CHỦ</a>
+                                        <a href="product-list.html" class="nav-item nav-link">SẢN PHẨM</a>
+                                        <a href="contact.html" class="nav-item nav-link">LIÊN LẠC</a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="search">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                        <button><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="user">
+                        <a href="wishlist.html" class="btn wishlist">
+                            <i class="fa fa-heart"></i>
+                            <span> (0)</span>
+                        </a>
+                        <a href="cart.html" class="btn cart">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>(0)</span>
+                        </a>
+                        <a href="#" class="nav-link dropdown-toggle" style="color:#ffff; font-weight: 600;" data-toggle="dropdown">TÀI KHOẢN</a>
+                        <div class="dropdown-menu">
+                            <a href="login.html" class="dropdown-item">Đăng Nhập</a>
+                            <a href="#" class="dropdown-item">Đăng kí</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar End -->
+    @RenderBody()
+    <!-- Footer Start -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Giữ Liên Lạc</h2>
+                        <div class="contact-info">
+                            <p><i class="fa fa-map-marker"></i>Khu Công Nghệ Cao, Q.9, TP.HCM</p>
+                            <p><i class="fa fa-envelope"></i>thanhhung041100@gmail.com</p>
+                            <p><i class="fa fa-phone"></i>+078 3727 238</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Theo dõi Fanpage</h2>
+                        <div class="contact-info">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Thông Tin Công Ty</h2>
+                        <ul>
+                            <li><a href="#">Thông tin của công ty</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Điều khoản & Điều kiện</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Thông Tin Mua Hàng</h2>
+                        <ul>
+                            <li><a href="#">Chính sách đổi trả</a></li>
+                            <li><a href="#">Chính sách vận chuyển</a></li>
+                            <li><a href="#">Chính sách hoàn trả</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row payment align-items-center">
+                <div class="col-md-6">
+                    <div class="payment-method">
+                        <h2>Chúng tôi nhận: </h2>
+                        <img src="img/payment-method.png" alt="Payment Method" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="payment-security">
+                        <h2>Được đảm bảo bởi: </h2>
+                        <img src="img/godaddy.svg" alt="Payment Security" />
+                        <img src="img/norton.svg" alt="Payment Security" />
+                        <img src="img/ssl.svg" alt="Payment Security" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Footer Bottom Start -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 copyright">
+                    <h4>
+                        © 2020 - CÔNG TY TNHH HHT VN</h2>
+                        <p> Giấy CNĐKDN: 0310874914 – Ngày cấp: 25/11/2011 - Cơ quan cấp: Phòng Đăng Ký Kinh Doanh – Sở Kế Hoạch và Đầu Tư TP.HCM </p>
+                        <p> Địa chỉ đăng ký kinh doanh: Hutech công nghệ cao, Quận 9, TP.HCM - Điện thoại: 078 3727 238 - Email: thanhhung041100@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Bottom End -->
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/lib/easing/easing.min.js"></script>
+    <script src="~/Content/assets/lib/slick/slick.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/Content/assets/js/main.js"></script>
+</body>
+
+</html>

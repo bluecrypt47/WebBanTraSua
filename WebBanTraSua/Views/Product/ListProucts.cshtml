@@ -1,0 +1,90 @@
+﻿@model PagedList.IPagedList<WebBanTraSua.Models.EF.SanPham>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Danh sách Sản phẩm";
+    Layout = "~/Views/Shared/Admin/_LayoutAdmin.cshtml";
+}
+
+@section header {
+    Danh sách Sản phẩm
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Danh sách Sản phẩm
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                @using (Html.BeginForm("ListProucts", "Product", FormMethod.Get))
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-md-4" style="margin-right:-15px;">
+                                <input type="text" value="@ViewBag.searchProducts" name="searchProducts" class="form-control" placeholder="Tìm kiếm">
+                            </div>
+                            <div class="col-md-4" style=" padding-left:0px;">
+                                <button type="submit" class="btn btn-success"><i class="fa fa-search" style="color: white;"></i></button>
+                                <a href="/Product/Create" class="btn btn-primary" style=" background-color: #d9534f;border-color: #ac2925;">Thêm Sản phẩm</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <hr />
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Tên sản phẩm</th>
+                                <th>Hình ảnh</th>
+                                <th>Giá bán</th>
+                                <th>Đơn vị tính</th>
+                                <th>Giảm giá</th>
+                                <th>Giới thiệu</th>
+                                <th>Sản phẩm mới</th>
+                                <th>Sản phẩm nổi bật</th>
+                                <th>Ngày tạo</th>
+                                <th>Ngày cập nhật</th>
+                                <th>Cập nhật</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr id="row-@item.maSanPham">
+                                    <td></td>
+                                    <td>@item.tenSanPham</td>
+                                    <td> <img src="~/Content/assets/img/anh/@item.hinhAnh" alt="ảnh" width="100" /></td>
+                                    <td>@item.giaBan</td>
+                                    <td>@item.dvt</td>
+                                    <td>@item.giamGia</td>
+                                    <td>@item.gioiThieuSanPham</td>
+                                    <td>@(item.sanPhamMoi ? "Mới" : "")</td>
+                                    <td>@(item.sanPhamNoiBat ? "Nổi bật" : "")</td>
+                                    <td>@item.ngayTao</td>
+                                    <td>@item.ngayCapNhat</td>
+                                    <td><a href="/Product/Edit/@item.maSanPham"><i class="fa fa-edit" style="font-size:30px;"></i></a></td>
+                                    <td>
+                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.maSanPham }, new AjaxOptions
+                                   {
+                                       Confirm = "Bạn chắc chắn muốn xóa Sản phẩm này?",
+                                       OnComplete = "$(#'row-" + @item.maSanPham + "').remove()",
+                                       HttpMethod = "Delete"
+                                   })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    @Html.PagedListPager(Model, page => Url.Action("ListProucts", new { page }))
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+</div>

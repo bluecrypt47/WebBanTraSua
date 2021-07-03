@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{955F8E69-1630-4179-BAF4-CD42CAE253A8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebBanTraSua</RootNamespace>
+    <AssemblyName>WebBanTraSua</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Code\SessionHelper.cs" />
+    <Compile Include="Code\TaiKhoanSession.cs" />
+    <Compile Include="Common\CommenConstants.cs" />
+    <Compile Include="Common\Encrypt.cs" />
+    <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BillController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IntroduceController.cs" />
+    <Compile Include="Controllers\LoaiSanPhamController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductUserController.cs" />
+    <Compile Include="Controllers\SlideController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DAO\HoaDonDAO.cs" />
+    <Compile Include="Models\DAO\IntroduceDAO.cs" />
+    <Compile Include="Models\DAO\LoaiSanPhamDAO.cs" />
+    <Compile Include="Models\DAO\MenuDAO.cs" />
+    <Compile Include="Models\DAO\SanPhamDAO.cs" />
+    <Compile Include="Models\DAO\SlideDAO.cs" />
+    <Compile Include="Models\DAO\TaiKhoanDAO.cs" />
+    <Compile Include="Models\EF\ChiTietHoaDon.cs" />
+    <Compile Include="Models\EF\Footer.cs" />
+    <Compile Include="Models\EF\GioiThieu.cs" />
+    <Compile Include="Models\EF\HoaDon.cs" />
+    <Compile Include="Models\EF\LoaiSanPham.cs" />
+    <Compile Include="Models\EF\LoaiTaiKhoan.cs" />
+    <Compile Include="Models\EF\Menu.cs" />
+    <Compile Include="Models\EF\SanPham.cs" />
+    <Compile Include="Models\EF\Slide.cs" />
+    <Compile Include="Models\EF\TaiKhoan.cs" />
+    <Compile Include="Models\EF\WTSDBContext.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assetsAdmin\css\bootstrap-social.css" />
+    <Content Include="Content\assetsAdmin\css\bootstrap-theme.min.css" />
+    <Content Include="Content\assetsAdmin\css\bootstrap.min.css" />
+    <Content Include="Content\assetsAdmin\css\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\assetsAdmin\css\dataTables\dataTables.responsive.css" />
+    <Content Include="Content\assetsAdmin\css\font-awesome.min.css" />
+    <Content Include="Content\assetsAdmin\css\metisMenu.min.css" />
+    <Content Include="Content\assetsAdmin\css\morris.css" />
+    <Content Include="Content\assetsAdmin\css\startmin.css" />
+    <Content Include="Content\assetsAdmin\css\timeline.css" />
+    <Content Include="Content\assetsAdmin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\assetsAdmin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\assetsAdmin\js\bootstrap.min.js" />
+    <Content Include="Content\assetsAdmin\js\dataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Content\assetsAdmin\js\dataTables\jquery.dataTables.min.js" />
+    <Content Include="Content\assetsAdmin\js\flot-data.js" />
+    <Content Include="Content\assetsAdmin\js\flot\excanvas.min.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.colorhelpers.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.canvas.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.categories.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.crosshair.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.errorbars.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.image.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.navigate.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.pie.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.resize.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.selection.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.stack.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.symbol.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.threshold.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.time.js" />
+    <Content Include="Content\assetsAdmin\js\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\assetsAdmin\js\jquery.min.js" />
+    <Content Include="Content\assetsAdmin\js\metisMenu.min.js" />
+    <Content Include="Content\assetsAdmin\js\morris-data.js" />
+    <Content Include="Content\assetsAdmin\js\morris.min.js" />
+    <Content Include="Content\assetsAdmin\js\raphael.min.js" />
+    <Content Include="Content\assetsAdmin\js\startmin.js" />
+    <Content Include="Content\assets\css\style.css" />
+    <Content Include="Content\assets\img\321.png" />
+    <Content Include="Content\assets\img\anh\ba-bap-rang.jpg" />
+    <Content Include="Content\assets\img\anh\ba-chuoi-chien1.jpg" />
+    <Content Include="Content\assets\img\anh\ba-flan.jpg" />
+    <Content Include="Content\assets\img\anh\ba-mochi-dai-loan1.png" />
+    <Content Include="Content\assets\img\anh\ba-trang-cuon-chien.jpg" />
+    <Content Include="Content\assets\img\anh\ba-trang-nuong.jpg" />
+    <Content Include="Content\assets\img\anh\banggaocay.jpg" />
+    <Content Include="Content\assets\img\anh\banh mouse tra xanh.png" />
+    <Content Include="Content\assets\img\anh\banh-cheesecake-nuong-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\banh-flan.jpg" />
+    <Content Include="Content\assets\img\anh\banh-gao-lac-pho-mai.jpg" />
+    <Content Include="Content\assets\img\anh\banh-mousse-chanh-day.jpg" />
+    <Content Include="Content\assets\img\anh\banh-mousse-dau-tay.jpg" />
+    <Content Include="Content\assets\img\anh\banh-trang-cuon-5.jpg" />
+    <Content Include="Content\assets\img\anh\banh-trang-lui-cham-nam-me.jpg" />
+    <Content Include="Content\assets\img\anh\banh-trang-toi.jpg" />
+    <Content Include="Content\assets\img\anh\bánh Tiramisu.jpg" />
+    <Content Include="Content\assets\img\anh\bánh tráng bơ.jpg" />
+    <Content Include="Content\assets\img\anh\bánh tráng tac.jpg" />
+    <Content Include="Content\assets\img\anh\Bánh-Tráng-Cuốn-Trứng-Cút.jpg" />
+    <Content Include="Content\assets\img\anh\Bánh-tráng-muối-tắc.jpg" />
+    <Content Include="Content\assets\img\anh\cach-lam-thach-rau-cau-kiwi-600x400.jpeg" />
+    <Content Include="Content\assets\img\anh\cach-lam-thach-tu-bot-gelatin.jpg" />
+    <Content Include="Content\assets\img\anh\cach-lam-tra-sua-vi-bac-ha.jpg" />
+    <Content Include="Content\assets\img\anh\chan chau đỏjpg.jpg" />
+    <Content Include="Content\assets\img\anh\che-thach-trai-cay-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\dan-gan-ran.jpg" />
+    <Content Include="Content\assets\img\anh\dan-hotdog-han-quoc.jpg" />
+    <Content Include="Content\assets\img\anh\dan-hotdog.jpg" />
+    <Content Include="Content\assets\img\anh\dan\ba-bap-rang.jpg" />
+    <Content Include="Content\assets\img\anh\dan\ba-chuoi-chien1.jpg" />
+    <Content Include="Content\assets\img\anh\dan\ba-flan.jpg" />
+    <Content Include="Content\assets\img\anh\dan\ba-mochi-dai-loan1.png" />
+    <Content Include="Content\assets\img\anh\dan\ba-trang-cuon-chien.jpg" />
+    <Content Include="Content\assets\img\anh\dan\ba-trang-nuong.jpg" />
+    <Content Include="Content\assets\img\anh\dan\banggaocay.jpg" />
+    <Content Include="Content\assets\img\anh\dan\banh mouse tra xanh.png" />
+    <Content Include="Content\assets\img\anh\dan\banh-cheesecake-nuong-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\dan\banh-flan.jpg" />
+    <Content Include="Content\assets\img\anh\dan\banh-gao-lac-pho-mai.jpg" />
+    <Content Include="Content\assets\img\anh\dan\banh-mousse-chanh-day.jpg" />
+    <Content Include="Content\assets\img\anh\dan\banh-mousse-dau-tay.jpg" />
+    <Content Include="Content\assets\img\anh\dan\banh-trang-cuon-5.jpg" />
+    <Content Include="Content\assets\img\anh\dan\banh-trang-lui-cham-nam-me.jpg" />
+    <Content Include="Content\assets\img\anh\dan\banh-trang-toi.jpg" />
+    <Content Include="Content\assets\img\anh\dan\bánh Tiramisu.jpg" />
+    <Content Include="Content\assets\img\anh\dan\bánh tráng bơ.jpg" />
+    <Content Include="Content\assets\img\anh\dan\bánh tráng tac.jpg" />
+    <Content Include="Content\assets\img\anh\dan\Bánh-Tráng-Cuốn-Trứng-Cút.jpg" />
+    <Content Include="Content\assets\img\anh\dan\Bánh-tráng-muối-tắc.jpg" />
+    <Content Include="Content\assets\img\anh\dan\che-thach-trai-cay-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\dan\dan-gan-ran.jpg" />
+    <Content Include="Content\assets\img\anh\dan\dan-hotdog-han-quoc.jpg" />
+    <Content Include="Content\assets\img\anh\dan\dan-hotdog.jpg" />
+    <Content Include="Content\assets\img\anh\dan\ga cay pho mai.jpg" />
+    <Content Include="Content\assets\img\anh\dan\hinh-banh-macaron-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\dan\kh-chan-ga.jpg" />
+    <Content Include="Content\assets\img\anh\dan\kh-Da-heo-chien-gion.jpg" />
+    <Content Include="Content\assets\img\anh\dan\kh-hoanh-thanh.jpg" />
+    <Content Include="Content\assets\img\anh\dan\ob_4c5d00_ca-vien-kem-tuong-ot..jpg" />
+    <Content Include="Content\assets\img\anh\ga cay pho mai.jpg" />
+    <Content Include="Content\assets\img\anh\hinh-banh-macaron-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\hoc-lam-tra-sua-khoai-mon-dau-do.jpg" />
+    <Content Include="Content\assets\img\anh\index %281%29.jpg" />
+    <Content Include="Content\assets\img\anh\index %282%29.jpg" />
+    <Content Include="Content\assets\img\anh\index %283%29.jpg" />
+    <Content Include="Content\assets\img\anh\index.jpg" />
+    <Content Include="Content\assets\img\anh\kh-chan-ga.jpg" />
+    <Content Include="Content\assets\img\anh\kh-Da-heo-chien-gion.jpg" />
+    <Content Include="Content\assets\img\anh\kh-hoanh-thanh.jpg" />
+    <Content Include="Content\assets\img\anh\kiwi.jpg" />
+    <Content Include="Content\assets\img\anh\l--m-du---n-9-1597655441-392-width600height400.jpg" />
+    <Content Include="Content\assets\img\anh\lam-tra-sua-tu-syrup.jpg" />
+    <Content Include="Content\assets\img\anh\macchiato-hoa-dau-biec.jpg" />
+    <Content Include="Content\assets\img\anh\macchiato-la-gi-7.jpg" />
+    <Content Include="Content\assets\img\anh\machiato\macchiato-hoa-dau-biec.jpg" />
+    <Content Include="Content\assets\img\anh\machiato\macchiato-la-gi-7.jpg" />
+    <Content Include="Content\assets\img\anh\machiato\Matcha-macchiato-ngon-kho-cuong.jpg" />
+    <Content Include="Content\assets\img\anh\matcha dau do.jpg" />
+    <Content Include="Content\assets\img\anh\matcha sua.jpg" />
+    <Content Include="Content\assets\img\anh\Matcha-macchiato-ngon-kho-cuong.jpg" />
+    <Content Include="Content\assets\img\anh\ob_4c5d00_ca-vien-kem-tuong-ot..jpg" />
+    <Content Include="Content\assets\img\anh\râu câu trái cây.jpg" />
+    <Content Include="Content\assets\img\anh\sua-tuoi-tran-chau-duong-den.jpg" />
+    <Content Include="Content\assets\img\anh\thach-cafe-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\thach-chocolate.jpg" />
+    <Content Include="Content\assets\img\anh\thach-hoa-qua.jpg" />
+    <Content Include="Content\assets\img\anh\thach_rau_cau_pho_mai_jpg.jpg" />
+    <Content Include="Content\assets\img\anh\thạch khoai môn.jpg" />
+    <Content Include="Content\assets\img\anh\thạch xoài.jpg" />
+    <Content Include="Content\assets\img\anh\topping-cream.jpg" />
+    <Content Include="Content\assets\img\anh\topping\cach-lam-thach-rau-cau-kiwi-600x400.jpeg" />
+    <Content Include="Content\assets\img\anh\topping\cach-lam-thach-tu-bot-gelatin.jpg" />
+    <Content Include="Content\assets\img\anh\topping\chan chau đỏjpg.jpg" />
+    <Content Include="Content\assets\img\anh\topping\râu câu trái cây.jpg" />
+    <Content Include="Content\assets\img\anh\topping\thach-cafe-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\topping\thach-chocolate.jpg" />
+    <Content Include="Content\assets\img\anh\topping\thach-hoa-qua.jpg" />
+    <Content Include="Content\assets\img\anh\topping\thach_rau_cau_pho_mai_jpg.jpg" />
+    <Content Include="Content\assets\img\anh\topping\thạch khoai môn.jpg" />
+    <Content Include="Content\assets\img\anh\topping\thạch xoài.jpg" />
+    <Content Include="Content\assets\img\anh\topping\topping-cream.jpg" />
+    <Content Include="Content\assets\img\anh\topping\tran-chau den .jpg" />
+    <Content Include="Content\assets\img\anh\topping\tran-chau-den.jpg" />
+    <Content Include="Content\assets\img\anh\topping\tran-chau-trang-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\topping\tran-chau.png" />
+    <Content Include="Content\assets\img\anh\tra dao.jpg" />
+    <Content Include="Content\assets\img\anh\tra dua hau.jpg" />
+    <Content Include="Content\assets\img\anh\Tra sũa socola.jpg" />
+    <Content Include="Content\assets\img\anh\tra ổi.jpg" />
+    <Content Include="Content\assets\img\anh\tra-chanh-bac-ha-ngon-1.jpg" />
+    <Content Include="Content\assets\img\anh\tra-chanh-day-1.jpg" />
+    <Content Include="Content\assets\img\anh\tra-chanh.jpg" />
+    <Content Include="Content\assets\img\anh\tra-dao-cam-sa-ngot-ngao.jpg" />
+    <Content Include="Content\assets\img\anh\tra-dao.jpg" />
+    <Content Include="Content\assets\img\anh\tra-h-dau-tay-5-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-dau-do.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-hoa-dau-biec-07122.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-khoai-mon.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-matcha.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-socola.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-thai-vi-tra-xanh.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-than-tre.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-tran-chau.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-trang-kenh.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-truyen-thong.jpg" />
+    <Content Include="Content\assets\img\anh\tra-sua-tu-nau.jpg" />
+    <Content Include="Content\assets\img\anh\tra-tac.jpg" />
+    <Content Include="Content\assets\img\anh\tra-thom.jpg" />
+    <Content Include="Content\assets\img\anh\tra-vai-1.jpg" />
+    <Content Include="Content\assets\img\anh\tra-vai.jpg" />
+    <Content Include="Content\assets\img\anh\tra-xoai.jpg" />
+    <Content Include="Content\assets\img\anh\tran-chau den .jpg" />
+    <Content Include="Content\assets\img\anh\tran-chau-den.jpg" />
+    <Content Include="Content\assets\img\anh\tran-chau-trang-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\tran-chau.png" />
+    <Content Include="Content\assets\img\anh\trà táo.jpg" />
+    <Content Include="Content\assets\img\anh\ts bac ha.jpg" />
+    <Content Include="Content\assets\img\anh\ts khoai mon.jpg" />
+    <Content Include="Content\assets\img\anh\ts thai tra xanh.jpg" />
+    <Content Include="Content\assets\img\anh\ts\cach-lam-tra-sua-vi-bac-ha.jpg" />
+    <Content Include="Content\assets\img\anh\ts\hoc-lam-tra-sua-khoai-mon-dau-do.jpg" />
+    <Content Include="Content\assets\img\anh\ts\kiwi.jpg" />
+    <Content Include="Content\assets\img\anh\ts\l--m-du---n-9-1597655441-392-width600height400.jpg" />
+    <Content Include="Content\assets\img\anh\ts\lam-tra-sua-tu-syrup.jpg" />
+    <Content Include="Content\assets\img\anh\ts\sua-tuoi-tran-chau-duong-den.jpg" />
+    <Content Include="Content\assets\img\anh\ts\Tra sũa socola.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-dau-do.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-hoa-dau-biec-07122.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-khoai-mon.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-matcha.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-socola.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-thai-vi-tra-xanh.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-than-tre.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-tran-chau.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-trang-kenh.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-truyen-thong.jpg" />
+    <Content Include="Content\assets\img\anh\ts\tra-sua-tu-nau.jpg" />
+    <Content Include="Content\assets\img\anh\ts\ts bac ha.jpg" />
+    <Content Include="Content\assets\img\anh\ts\ts khoai mon.jpg" />
+    <Content Include="Content\assets\img\anh\ts\ts thai tra xanh.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\index %281%29.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\index %282%29.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\index %283%29.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\index.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\matcha dau do.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\matcha sua.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra dao.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra dua hau.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra ổi.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-chanh-bac-ha-ngon-1.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-chanh-day-1.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-chanh.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-dao-cam-sa-ngot-ngao.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-dao.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-h-dau-tay-5-600x400.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-sua-matcha.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-tac.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-thom.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-vai-1.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-vai.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\tra-xoai.jpg" />
+    <Content Include="Content\assets\img\anh\ttc\trà táo.jpg" />
+    <Content Include="Content\assets\img\brand-1.png" />
+    <Content Include="Content\assets\img\brand-2.png" />
+    <Content Include="Content\assets\img\brand-3.png" />
+    <Content Include="Content\assets\img\brand-4.png" />
+    <Content Include="Content\assets\img\brand-5.png" />
+    <Content Include="Content\assets\img\brand-6.png" />
+    <Content Include="Content\assets\img\category-1.jpg" />
+    <Content Include="Content\assets\img\category-2.jpg" />
+    <Content Include="Content\assets\img\category-3.jpg" />
+    <Content Include="Content\assets\img\category-4.jpg" />
+    <Content Include="Content\assets\img\category-5.jpg" />
+    <Content Include="Content\assets\img\category-6.jpg" />
+    <Content Include="Content\assets\img\category-7.jpg" />
+    <Content Include="Content\assets\img\category-8.jpg" />
+    <Content Include="Content\assets\img\godaddy.svg" />
+    <Content Include="Content\assets\img\logo.png" />
+    <Content Include="Content\assets\img\norton.svg" />
+    <Content Include="Content\assets\img\payment-method.png" />
+    <Content Include="Content\assets\img\product-1.jpg" />
+    <Content Include="Content\assets\img\product-10.jpg" />
+    <Content Include="Content\assets\img\product-2.jpg" />
+    <Content Include="Content\assets\img\product-3.jpg" />
+    <Content Include="Content\assets\img\product-4.jpg" />
+    <Content Include="Content\assets\img\product-5.jpg" />
+    <Content Include="Content\assets\img\product-6.jpg" />
+    <Content Include="Content\assets\img\product-7.jpg" />
+    <Content Include="Content\assets\img\product-8.jpg" />
+    <Content Include="Content\assets\img\product-9.jpg" />
+    <Content Include="Content\assets\img\review-1.jpg" />
+    <Content Include="Content\assets\img\review-2.jpg" />
+    <Content Include="Content\assets\img\review-3.jpg" />
+    <Content Include="Content\assets\img\slider-1.jpg" />
+    <Content Include="Content\assets\img\slider-2.jpg" />
+    <Content Include="Content\assets\img\slider-3.jpg" />
+    <Content Include="Content\assets\img\ssl.svg" />
+    <Content Include="Content\assets\js\main.js" />
+    <Content Include="Content\assets\lib\easing\easing.js" />
+    <Content Include="Content\assets\lib\easing\easing.min.js" />
+    <Content Include="Content\assets\lib\slick\ajax-loader.gif" />
+    <Content Include="Content\assets\lib\slick\fonts\slick.svg" />
+    <Content Include="Content\assets\lib\slick\slick-theme.css" />
+    <Content Include="Content\assets\lib\slick\slick.css" />
+    <Content Include="Content\assets\lib\slick\slick.js" />
+    <Content Include="Content\assets\lib\slick\slick.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\assetsAdmin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\assetsAdmin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\assetsAdmin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\assetsAdmin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\assetsAdmin\fonts\FontAwesome.otf" />
+    <Content Include="Content\assetsAdmin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\assetsAdmin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\assetsAdmin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\assetsAdmin\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\assets\lib\slick\config.rb" />
+    <Content Include="Content\assets\lib\slick\fonts\slick.eot" />
+    <Content Include="Content\assets\lib\slick\fonts\slick.ttf" />
+    <Content Include="Content\assets\lib\slick\fonts\slick.woff" />
+    <Content Include="Content\assets\lib\slick\slick-theme.less" />
+    <Content Include="Content\assets\lib\slick\slick-theme.scss" />
+    <Content Include="Content\assets\lib\slick\slick.less" />
+    <Content Include="Content\assets\lib\slick\slick.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\User\_Layout.cshtml" />
+    <Content Include="Views\Shared\Admin\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Shared\Admin\_LeftMenusAdmin.cshtml" />
+    <Content Include="Views\Slide\Create.cshtml" />
+    <Content Include="Views\Slide\Edit.cshtml" />
+    <Content Include="Views\Slide\ListSlides.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\ListUser.cshtml" />
+    <Content Include="Views\Admin\CreateAdmin.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\ListAdmin.cshtml" />
+    <Content Include="Views\Admin\EditAdmin.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\ListProucts.cshtml" />
+    <Content Include="Views\Bill\ListBill.cshtml" />
+    <Content Include="Views\LoaiSanPham\Create.cshtml" />
+    <Content Include="Views\LoaiSanPham\Edit.cshtml" />
+    <Content Include="Views\LoaiSanPham\ListTypeProucts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Introduce\" />
+    <Folder Include="Views\ProductUser\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1926</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44308/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
