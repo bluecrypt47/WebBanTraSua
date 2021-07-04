@@ -142,6 +142,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BillController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IntroduceController.cs" />
     <Compile Include="Controllers\LoaiSanPhamController.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\DAO\FooterDAO.cs" />
     <Compile Include="Models\DAO\HoaDonDAO.cs" />
     <Compile Include="Models\DAO\IntroduceDAO.cs" />
@@ -435,6 +437,7 @@
     <Content Include="Content\assets\img\slider-2.jpg" />
     <Content Include="Content\assets\img\slider-3.jpg" />
     <Content Include="Content\assets\img\ssl.svg" />
+    <Content Include="Content\assets\js\Controller\CartController.js" />
     <Content Include="Content\assets\js\main.js" />
     <Content Include="Content\assets\lib\easing\easing.js" />
     <Content Include="Content\assets\lib\easing\easing.min.js" />
@@ -478,6 +481,8 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -520,6 +525,8 @@
     <Content Include="Views\ProductUser\TypeProducts.cshtml" />
     <Content Include="Views\Shared\User\_Footer.cshtml" />
     <Content Include="Views\Shared\User\_Header.cshtml" />
+    <Content Include="Views\Cart\ListItemInCart.cshtml" />
+    <Content Include="Views\Home\HeaderCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

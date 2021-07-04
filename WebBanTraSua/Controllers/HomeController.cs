@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebBanTraSua.Common;
+using WebBanTraSua.Models;
 using WebBanTraSua.Models.DAO;
 
 namespace WebBanTraSua.Controllers
@@ -24,6 +26,18 @@ namespace WebBanTraSua.Controllers
         {
             var model = new MenuDAO().listMenus();
             return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult HeaderCart()
+        {
+            var cart = Session[CommenConstants.CartSession];
+            var listItem = new List<CartModel>();
+            if (cart != null)
+            {
+                listItem = (List<CartModel>)cart;
+            }
+            return PartialView(listItem);
         }
     }
 }

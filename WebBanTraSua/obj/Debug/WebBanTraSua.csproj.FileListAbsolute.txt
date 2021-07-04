@@ -72,7 +72,6 @@ E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\System.Web.WebPages.Razor.xml
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\Newtonsoft.Json.xml
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\Antlr3.Runtime.pdb
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\obj\Debug\WebBanTraSua.csprojAssemblyReference.cache
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\obj\Debug\WebBanTraSua.csproj.CoreCompileInputs.cache
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\obj\Debug\WebBanTraSua.csproj.CopyComplete
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\obj\Debug\WebBanTraSua.dll
@@ -85,3 +84,4 @@ E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\PagedList.dll
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\PagedList.Mvc.dll
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\PagedList.xml
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\PagedList.Mvc.xml
+E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\obj\Debug\WebBanTraSua.csprojAssemblyReference.cache

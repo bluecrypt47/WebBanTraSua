@@ -28,7 +28,7 @@ namespace WebBanTraSua
             routes.MapRoute(
                 name: "Cart",
                 url: "gio-hang",
-                defaults: new { controller = "Cart", action = "ListCart", id = UrlParameter.Optional }
+                defaults: new { controller = "Cart", action = "AddCart", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

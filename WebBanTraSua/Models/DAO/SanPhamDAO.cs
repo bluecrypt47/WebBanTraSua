@@ -29,13 +29,6 @@ namespace WebBanTraSua.Models.DAO
             return db.SanPhams.Where(x => x.maSanPham != id && x.maLoaiSanPham == product.maLoaiSanPham).ToList();
         }
 
-        // List sản phẩm cùng loại
-        //public List<SanPham> ListProductsByTypeID(long id, ref int totalRecord, int pageIndex, int pageSize)
-        //{
-        //    totalRecord = db.SanPhams.Where(x => x.maLoaiSanPham == id).Count();
-        //    var model = db.SanPhams.Where(x => x.maLoaiSanPham == id).OrderByDescending(x => x.ngayCapNhat).Skip((pageSize - 1) * pageIndex).Take(pageSize).ToList();
-        //    return model;
-        //}
         public IEnumerable<SanPham> ListProductsByTypeID(long id, int page, int pageSize)
         {
             return db.SanPhams.Where(x => x.maLoaiSanPham == id).OrderByDescending(x => x.ngayCapNhat).ToPagedList(page, pageSize);
