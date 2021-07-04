@@ -152,6 +152,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAO\FooterDAO.cs" />
     <Compile Include="Models\DAO\HoaDonDAO.cs" />
     <Compile Include="Models\DAO\IntroduceDAO.cs" />
     <Compile Include="Models\DAO\LoaiSanPhamDAO.cs" />
@@ -517,10 +518,13 @@
     <Content Include="Views\ProductUser\AllProducts.cshtml" />
     <Content Include="Views\ProductUser\ProductDetails.cshtml" />
     <Content Include="Views\ProductUser\TypeProducts.cshtml" />
+    <Content Include="Views\Shared\User\_Footer.cshtml" />
+    <Content Include="Views\Shared\User\_Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Footer\" />
     <Folder Include="Views\Introduce\" />
   </ItemGroup>
   <ItemGroup>

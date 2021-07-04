@@ -25,12 +25,5 @@ namespace WebBanTraSua.Controllers
             var model = new MenuDAO().listMenus();
             return PartialView(model);
         }
-
-        //[ChildActionOnly]
-        //public ActionResult Footer()
-        //{
-        //    var model = new FooterDAO().GetFooter();
-        //    return PartialView(model);
-        //}
     }
 }
