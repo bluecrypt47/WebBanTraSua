@@ -1,4 +1,4 @@
-namespace WebBanTraSua.Models.EF
+﻿namespace WebBanTraSua.Models.EF
 {
     using System;
     using System.Collections.Generic;
@@ -14,12 +14,16 @@ namespace WebBanTraSua.Models.EF
 
         [Column(TypeName = "ntext")]
         [Required]
+        [Display(Name = "Nội dung")]
         public string noiDung { get; set; }
 
+        [Display(Name = "Trạng thái")]
         public bool trangThai { get; set; }
 
+        [Display(Name = "Ngày tạo")]
         public DateTime? ngayTao { get; set; }
 
+        [Display(Name = "Ngày cập nhật")]
         public DateTime? ngayCapNhat { get; set; }
     }
 }

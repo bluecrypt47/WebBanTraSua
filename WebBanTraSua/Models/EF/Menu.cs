@@ -1,4 +1,4 @@
-namespace WebBanTraSua.Models.EF
+﻿namespace WebBanTraSua.Models.EF
 {
     using System;
     using System.Collections.Generic;
@@ -13,16 +13,20 @@ namespace WebBanTraSua.Models.EF
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Tên")]
         public string tenMenu { get; set; }
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Đường dẫn")]
         public string duongDan { get; set; }
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Target")]
         public string targets { get; set; }
 
+        [Display(Name = "Trạng thái")]
         public bool trangThai { get; set; }
     }
 }

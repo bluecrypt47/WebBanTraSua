@@ -1,4 +1,4 @@
-namespace WebBanTraSua.Models.EF
+﻿namespace WebBanTraSua.Models.EF
 {
     using System;
     using System.Collections.Generic;
@@ -16,17 +16,22 @@ namespace WebBanTraSua.Models.EF
         }
 
         [Key]
+        [Display(Name = "Mã loại")]
         public long maLoaiSanPham { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Tên loại")]
         public string tenLoaiSanPham { get; set; }
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Đường dẫn")]
         public string duongDan { get; set; }
 
+        [Display(Name = "Ngày tạo")]
         public DateTime? ngayTao { get; set; }
 
+        [Display(Name = "Ngày cập nhật")]
         public DateTime? ngayCapNhat { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

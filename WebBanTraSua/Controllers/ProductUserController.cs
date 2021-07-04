@@ -4,51 +4,29 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebBanTraSua.Models.DAO;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WebBanTraSua.Controllers
 {
     public class ProductUserController : Controller
     {
         // GET: ProductUser
-        public ActionResult AllProducts()
+        public ActionResult AllProducts(int page= 1, int pageSize = 12)
         {
             var allProducts = new SanPhamDAO();
-            var model = allProducts.AllProducts();
+            var model = allProducts.AllProducts(page, pageSize);
             return View(model);
         }
 
-        public ActionResult TypeProducts(long idTypeProduct)
+        public ActionResult TypeProducts(long idTypeProduct, int page = 1, int pageSize = 9)
         {
-            var typeProducts = new SanPhamDAO().ListProductsByTypeID(idTypeProduct);
+            var typeProducts = new SanPhamDAO().ListProductsByTypeID(idTypeProduct, page, pageSize);
 
             ViewBag.typeProducts = typeProducts;
             ViewBag.Categorys = new LoaiSanPhamDAO().ListTypeProducts();
             return View(typeProducts);
         }
-        //public ActionResult TypeProducts(long idTypeProduct, int pageIndex = 1, int pageSize = 10)
-        //{
-        //    int totalRecord = 0;
-        //    var typeProducts = new SanPhamDAO().ListProductsByTypeID(idTypeProduct, ref totalRecord, pageIndex, pageSize);
-
-        //    ViewBag.Total = totalRecord;
-        //    ViewBag.Page = pageIndex;
-
-        //    int maxPage = 5;
-        //    int totalPage = 0;
-
-        //    totalPage = (int)Math.Ceiling((double)(totalRecord / pageSize));
-
-        //    ViewBag.TotalPage = totalPage;
-        //    ViewBag.MaxPage = maxPage;
-        //    ViewBag.First = 1;
-        //    ViewBag.Last = totalPage;
-        //    ViewBag.Next = pageIndex + 1;
-        //    ViewBag.Prev = pageIndex - 1;
-
-        //    ViewBag.typeProducts = typeProducts;
-        //    ViewBag.Categorys = new LoaiSanPhamDAO().ListTypeProducts();
-        //    return View(typeProducts);
-        //}
 
         public ActionResult ProductDetails(long idProduct)
         {

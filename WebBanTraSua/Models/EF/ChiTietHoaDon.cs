@@ -1,4 +1,4 @@
-namespace WebBanTraSua.Models.EF
+﻿namespace WebBanTraSua.Models.EF
 {
     using System;
     using System.Collections.Generic;
@@ -12,17 +12,22 @@ namespace WebBanTraSua.Models.EF
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Display(Name = "Mã sản phẩm")]
         public long maSanPham { get; set; }
 
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Display(Name = "Mã hóa đơn")]
         public long maHoaDon { get; set; }
 
+        [Display(Name = "Số lượng")]
         public int? soLuong { get; set; }
 
+        [Display(Name = "Giá bán")]
         public double? giaBan { get; set; }
 
+        [Display(Name = "Thành tiền")]
         public double? thanhTien { get; set; }
 
         public virtual HoaDon HoaDon { get; set; }

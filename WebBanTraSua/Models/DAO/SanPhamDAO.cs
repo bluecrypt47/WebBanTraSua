@@ -17,12 +17,10 @@ namespace WebBanTraSua.Models.DAO
         }
 
         // List all sản phẩm 
-        public List<SanPham> AllProducts()
+        public IEnumerable<SanPham> AllProducts(int page, int pageSize)
         {
-
-            return db.SanPhams.OrderByDescending(x => x.ngayCapNhat).ToList();
+            return db.SanPhams.OrderByDescending(x => x.ngayCapNhat).ToPagedList(page, pageSize);
         }
-
 
         // List sản phẩm liên quan
         public List<SanPham> ListProductsRelated(long id)
@@ -38,9 +36,9 @@ namespace WebBanTraSua.Models.DAO
         //    var model = db.SanPhams.Where(x => x.maLoaiSanPham == id).OrderByDescending(x => x.ngayCapNhat).Skip((pageSize - 1) * pageIndex).Take(pageSize).ToList();
         //    return model;
         //}
-        public List<SanPham> ListProductsByTypeID(long id)
+        public IEnumerable<SanPham> ListProductsByTypeID(long id, int page, int pageSize)
         {
-            return db.SanPhams.Where(x => x.maLoaiSanPham == id).ToList();
+            return db.SanPhams.Where(x => x.maLoaiSanPham == id).OrderByDescending(x => x.ngayCapNhat).ToPagedList(page, pageSize);
         }
 
         // List sản phẩm mới

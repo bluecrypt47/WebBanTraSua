@@ -1,0 +1,8 @@
+﻿
+@model List<WebBanTraSua.Models.EF.Menu>
+
+
+@foreach (var item in Model)
+{
+    <a href="@item.duongDan" class="nav-item nav-link active" target="@item.targets">@item.tenMenu</a>
+}

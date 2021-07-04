@@ -1,4 +1,4 @@
-namespace WebBanTraSua.Models.EF
+﻿namespace WebBanTraSua.Models.EF
 {
     using System;
     using System.Collections.Generic;
@@ -16,9 +16,11 @@ namespace WebBanTraSua.Models.EF
         }
 
         [Key]
+        [Display(Name = "Mã loại")]
         public bool maLoaiTaiKhoan { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Tên loại")]
         public string tenLoaiTaiKhoan { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -47,20 +47,18 @@
             <div class="row align-items-center">
                 <div class="col-md-2">
                     <div class="logo">
-                        <a href="index.html">
-                            <h1>HHT</h1>
+                        <a href="/trang-chu">
+                            <h1>TCNL</h1>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="nav">
                         <div class="container-fluid">
-                            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                            <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="width:500px;">
                                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                                     <div class="navbar-nav mr-auto">
-                                        <a href="index.html" class="nav-item nav-link active">TRANG CHỦ</a>
-                                        <a href="product-list.html" class="nav-item nav-link">SẢN PHẨM</a>
-                                        <a href="contact.html" class="nav-item nav-link">LIÊN LẠC</a>
+                                        @{Html.RenderAction("Menus", "Home");}
                                     </div>
                                 </div>
                             </nav>
@@ -75,10 +73,10 @@
                 </div>
                 <div class="col-md-3">
                     <div class="user">
-                        <a href="wishlist.html" class="btn wishlist">
+                        @*<a href="wishlist.html" class="btn wishlist">
                             <i class="fa fa-heart"></i>
                             <span> (0)</span>
-                        </a>
+                        </a>*@
                         <a href="cart.html" class="btn cart">
                             <i class="fa fa-shopping-cart"></i>
                             <span>(0)</span>
@@ -152,15 +150,15 @@
                 <div class="col-md-6">
                     <div class="payment-method">
                         <h2>Chúng tôi nhận: </h2>
-                        <img src="img/payment-method.png" alt="Payment Method" />
+                        <img src="~/Content/assets/img/payment-method.png" alt="Payment Method" />
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="payment-security">
                         <h2>Được đảm bảo bởi: </h2>
-                        <img src="img/godaddy.svg" alt="Payment Security" />
-                        <img src="img/norton.svg" alt="Payment Security" />
-                        <img src="img/ssl.svg" alt="Payment Security" />
+                        <img src="~/Content/assets/img/godaddy.svg" alt="Payment Security" />
+                        <img src="~/Content/assets/img/norton.svg" alt="Payment Security" />
+                        <img src="~/Content/assets/img/ssl.svg" alt="Payment Security" />
                     </div>
                 </div>
             </div>
