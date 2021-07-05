@@ -154,6 +154,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CartModel.cs" />
+    <Compile Include="Models\DAO\ChiTietHoaDonDAO.cs" />
     <Compile Include="Models\DAO\FooterDAO.cs" />
     <Compile Include="Models\DAO\HoaDonDAO.cs" />
     <Compile Include="Models\DAO\IntroduceDAO.cs" />
@@ -525,8 +526,10 @@
     <Content Include="Views\ProductUser\TypeProducts.cshtml" />
     <Content Include="Views\Shared\User\_Footer.cshtml" />
     <Content Include="Views\Shared\User\_Header.cshtml" />
-    <Content Include="Views\Cart\ListItemInCart.cshtml" />
     <Content Include="Views\Home\HeaderCart.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Cart\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

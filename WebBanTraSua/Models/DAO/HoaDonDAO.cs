@@ -56,5 +56,12 @@ namespace WebBanTraSua.Models.DAO
                 return false;
             }
         }
+
+        public long InsertBill(HoaDon hoaDon)
+        {
+            db.HoaDons.Add(hoaDon);
+            db.SaveChanges();
+            return hoaDon.maHoaDon;
+        }
     }
 }

@@ -26,8 +26,26 @@ namespace WebBanTraSua
             );
 
             routes.MapRoute(
+                name: "Success",
+                url: "hoan-thanh",
+                defaults: new { controller = "Cart", action = "Success", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Checkout",
+                url: "thanh-toan",
+                defaults: new { controller = "Cart", action = "Checkout", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Cart",
                 url: "gio-hang",
+                defaults: new { controller = "Cart", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Add Cart",
+                url: "them-gio-hang",
                 defaults: new { controller = "Cart", action = "AddCart", id = UrlParameter.Optional }
             );
 

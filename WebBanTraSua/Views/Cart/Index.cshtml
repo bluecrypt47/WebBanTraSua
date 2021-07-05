@@ -52,12 +52,12 @@
                                             <td>
                                                 <div class="qty">
                                                     <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="@item.SoLuong">
+                                                    <input class="quantity" data-id="@item.SanPham.maSanPham" type="text" value="@item.SoLuong">
                                                     <button class="btn-plus"><i class="fa fa-plus"></i></button>
                                                 </div>
                                             </td>
                                             <td>@(item.SanPham.giaBan.GetValueOrDefault(0) * item.SoLuong)<span>₫</span></td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
+                                            <td><a href="#" data-id="@item.SanPham.maSanPham" class="btn-delete"><i class="fa fa-trash" ></i></a></td>
                                         </tr>
                                     }
 
@@ -68,7 +68,7 @@
                                 <button id="btnContinue" class="btn">Tiếp Tục Mua Hàng</button>
                                 <button id="btnUpdate" class="btn">Cập Nhật Giỏ Hàng</button>
                                 <button id="btnDeleteAll" class="btn">Xóa Giỏ Hàng</button>
-                                <button id="btnPayment" class="btn">Thanh Toán</button>
+                                <button id="btnCheckout" class="btn">Thanh Toán</button>
                             </div>
                         }
                         else
