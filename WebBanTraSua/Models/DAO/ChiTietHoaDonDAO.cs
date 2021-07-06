@@ -22,10 +22,20 @@ namespace WebBanTraSua.Models.DAO
                 db.ChiTietHoaDons.Add(chiTietHoaDon);
                 db.SaveChanges();
                 return true;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
             }
+        }
+
+        public IEnumerable<ChiTietHoaDon> GetByIDBill(long idBill)
+        {
+            ChiTietHoaDon listBill = new ChiTietHoaDon();
+
+            IQueryable<ChiTietHoaDon> model = db.ChiTietHoaDons.Where(x => x.maHoaDon == idBill);
+
+            return model;
         }
     }
 }

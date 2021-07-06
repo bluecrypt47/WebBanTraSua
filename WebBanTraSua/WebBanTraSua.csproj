@@ -535,6 +535,7 @@
     <Content Include="Views\About\Create.cshtml" />
     <Content Include="Views\About\Edit.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Bill\DetailsBill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

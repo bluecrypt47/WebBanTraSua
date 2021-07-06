@@ -20,6 +20,13 @@ namespace WebBanTraSua.Controllers
             return View(model);
         }
 
+        public ActionResult DetailsBill(long id)
+        {
+            var dao = new ChiTietHoaDonDAO();
+            var model = dao.GetByIDBill(id);
+            return View(model);
+        }
+
         [HttpDelete]
         public ActionResult Delete(long id)
         {
