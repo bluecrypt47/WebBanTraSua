@@ -16,13 +16,13 @@ namespace WebBanTraSua
             routes.MapRoute(
                 name: "Contact",
                 url: "lien-he",
-                defaults: new { controller = "ProductUser", action = "Contact", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Contact", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "About",
                 url: "gioi-thieu",
-                defaults: new { controller = "ProductUser", action = "About", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

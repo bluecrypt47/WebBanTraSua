@@ -13,14 +13,17 @@
         [Display(Name = "Mã slide")]
         public int maSlide { get; set; }
 
+        [Required(ErrorMessage = "Hình ảnh không được để trống!")]
         [StringLength(1000)]
         [Display(Name = "Hình ảnh")]
         public string hinhAnh { get; set; }
 
+        [Required(ErrorMessage = "Tên không được để trống!")]
         [StringLength(100)]
         [Display(Name = "Tên")]
         public string name { get; set; }
 
+        [Required(ErrorMessage = "Mô tả ngắn không được để trống!")]
         [StringLength(100)]
         [Display(Name = "Mô tả ngắn")]
         public string moTaNgan { get; set; }

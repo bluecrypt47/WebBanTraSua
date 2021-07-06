@@ -31,10 +31,12 @@
 
         [StringLength(1000)]
         [Display(Name = "Địa chỉ")]
+        [Required(ErrorMessage = "Địa chỉ không được để trống!")]
         public string diaChi { get; set; }
 
         [StringLength(11)]
         [Display(Name = "Số điện thoại")]
+        [Required(ErrorMessage = "Số điện thoại không được để trống!")]
         public string sdt { get; set; }
 
         [Display(Name = "Ngày tạo")]

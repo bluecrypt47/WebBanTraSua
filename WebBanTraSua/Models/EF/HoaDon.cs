@@ -19,22 +19,23 @@
         [Display(Name = "Mã hóa đơn")]
         public long maHoaDon { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Email không được để trống!")]
         [StringLength(100)]
         [Display(Name = "Email")]
         public string email { get; set; }
 
-        [Required]
+
+        [Required(ErrorMessage = "Tên người mua không được để trống!")]
         [StringLength(100)]
         [Display(Name = "Tên người mua")]
         public string tenNguoiMua { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Số điện thoại không được để trống!")]
         [StringLength(11)]
         [Display(Name = "Số điện thoại")]
         public string sdt { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Địa chỉ không được để trống!")]
         [StringLength(1000)]
         [Display(Name = "Địa chỉ")]
         public string diaChi { get; set; }

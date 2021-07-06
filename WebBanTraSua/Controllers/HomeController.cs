@@ -39,5 +39,15 @@ namespace WebBanTraSua.Controllers
             }
             return PartialView(listItem);
         }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            return View();
+        }
     }
 }

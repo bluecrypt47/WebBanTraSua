@@ -47,10 +47,9 @@
                 <!-- /.row -->
                 @if (TempData["AlertMessage"] != null)
                 {
-                    <div id="AlertBox" class="alert @TempData["AlertType"] hide">
-                        @TempData["AlertMessage"]
-                    </div>
-                }
+    <div id="AlertBox" class="alert @TempData["AlertType"] hide">
+        @TempData["AlertMessage"]
+    </div>}
 
                 @RenderBody()
             </div>
@@ -63,6 +62,10 @@
     <!-- jQuery -->
     <script src="~/Content/assetsAdmin/js/jquery.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="~/Content/assetsAdmin/js/bootstrap.min.js"></script>

@@ -9,9 +9,9 @@
 <div class="breadcrumb-wrap">
     <div class="container-fluid">
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Products</a></li>
-            <li class="breadcrumb-item active">Checkout</li>
+            <li class="breadcrumb-item"><a href="/trang-chu">TRANG CHỦ</a></li>
+            <li class="breadcrumb-item"><a href="/tat-ca-san-pham">SẢN PHẨM</a></li>
+            <li class="breadcrumb-item active">THANH TOÁN</li>
         </ul>
     </div>
 </div>
@@ -20,10 +20,10 @@
 <div class="checkout">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="checkout-inner">
                     <div class="billing-address">
-                        <h2>Thanh Toán</h2>
+                        <h2>Thông Tin Người Nhận</h2>
                         @using (Html.BeginForm("Checkout", "Cart", FormMethod.Post))
                         {
                             <div class="row">
@@ -32,15 +32,15 @@
                                     <input class="form-control" name="email" type="text" placeholder="abc@gmail.com">
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Họ tên người nhận</label>
+                                    <label>Họ tên</label>
                                     <input class="form-control" name="name" type="text" placeholder="Trần Văn A">
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Địa chỉ người nhận</label>
+                                    <label>Địa chỉ</label>
                                     <input class="form-control" name="address" type="text" placeholder="475A Điện Biên Phủ, P. 25, Q. Bình Thạnh, TP. Hồ Chí Minh">
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Số điện thoại người nhận</label>
+                                    <label>Số điện thoại liên lạc</label>
                                     <input class="form-control" name="phoneNumber" type="text" placeholder="0123456789">
                                 </div>
                                 <div class="col-md-12">
@@ -48,13 +48,15 @@
                                     <textarea class="form-control" name="note" type="text" placeholder="Có thể để trống!" rows="6"></textarea>
                                 </div>
                             </div>
-
-                            <button type="submit" class="btn">Thanh Toán</button>
+                            <div class="col-md-12" style="text-align:center;">
+                                <button type="submit" class="btn">Gửi Đơn Hàng</button>
+                            </div>
+                            
                         }
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            @*<div class="col-lg-4">
                 <div class="checkout-inner">
                     <div class="checkout-summary">
                         <h1>Cart Total</h1>
@@ -128,7 +130,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
 </div>

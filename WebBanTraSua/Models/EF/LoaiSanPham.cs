@@ -19,11 +19,12 @@
         [Display(Name = "Mã loại")]
         public long maLoaiSanPham { get; set; }
 
+        [Required(ErrorMessage = "Tên loại không được để trống!")]
         [StringLength(100)]
         [Display(Name = "Tên loại")]
         public string tenLoaiSanPham { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Đường dẫn không được để trống!")]
         [StringLength(100)]
         [Display(Name = "Đường dẫn")]
         public string duongDan { get; set; }

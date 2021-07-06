@@ -18,7 +18,7 @@
                 cartList.push({
                     soLuong: $(item).val(),
                     sanPham: {
-                        ID: $(item).data('id')
+                        maSanPham: $(item).data('id')
                     }
                 });
             });
