@@ -8,14 +8,14 @@ using WebBanTraSua.Models.EF;
 
 namespace WebBanTraSua.Controllers
 {
-    public class IntroduceController : BaseController
+    public class AboutController : BaseController
     {
         // GET: Introduce
-        public ActionResult ListIntroduce(string searchIntroduce, int page = 1, int pageSize = 10)
+        public ActionResult ListAbout(string searchAbout, int page = 1, int pageSize = 10)
         {
-            var dao = new IntroduceDAO();
-            var model = dao.ListAllPaging(searchIntroduce, page, pageSize);
-            ViewBag.searchIntroduce = searchIntroduce;
+            var dao = new AboutDAO();
+            var model = dao.ListAllPaging(searchAbout, page, pageSize);
+            ViewBag.searchAbout = searchAbout;
             return View(model);
         }
 
@@ -29,25 +29,25 @@ namespace WebBanTraSua.Controllers
         {
             if (ModelState.IsValid)
             {
-                var dao = new IntroduceDAO();
+                var dao = new AboutDAO();
 
                 long id = dao.insert(gioiThieu);
                 if (id > 0)
                 {
                     SetAlert("Thêm Giới thiệu thành công!!!", "success");
-                    return RedirectToAction("ListIntroduce", "Introduce");
+                    return RedirectToAction("ListAbout", "About");
                 }
                 else
                 {
                     ModelState.AddModelError("", "Thêm Giới thiệu thất bại!!!");
                 }
             }
-            return View("ListIntroduce");
+            return View("ListAbout");
         }
 
         public ActionResult Edit(int id)
         {
-            var gioiThieu = new IntroduceDAO().GetByID(id);
+            var gioiThieu = new AboutDAO().GetByID(id);
             return View(gioiThieu);
         }
 
@@ -56,29 +56,29 @@ namespace WebBanTraSua.Controllers
         {
             if (ModelState.IsValid)
             {
-                var dao = new IntroduceDAO();
+                var dao = new AboutDAO();
 
                 var result = dao.edit(gioiThieu);
 
                 if (result)
                 {
                     SetAlert("Cập nhật Giới thiệu thành công!!!", "success");
-                    return RedirectToAction("ListIntroduce", "Introduce");
+                    return RedirectToAction("ListAbout", "About");
                 }
                 else
                 {
                     ModelState.AddModelError("", "Cập nhật Giới thiệu thất bại!!!");
                 }
             }
-            return View("ListIntroduce");
+            return View("ListAbout");
         }
 
         [HttpDelete]
-        public ActionResult Delete(long id)
+        public ActionResult Delete(int id)
         {
-            new SlideDAO().Delete(id);
+            new AboutDAO().Delete(id);
 
-            return RedirectToAction("ListIntroduce", "Introduce");
+            return RedirectToAction("ListAbout", "About");
         }
     }
 }

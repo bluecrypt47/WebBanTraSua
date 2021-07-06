@@ -7,10 +7,10 @@ using WebBanTraSua.Models.EF;
 
 namespace WebBanTraSua.Models.DAO
 {
-    public class IntroduceDAO
+    public class AboutDAO
     {
         WTSDBContext db = null;
-        public IntroduceDAO()
+        public AboutDAO()
         {
             db = new WTSDBContext();
         }
@@ -43,13 +43,13 @@ namespace WebBanTraSua.Models.DAO
             }
         }
 
-        public IEnumerable<GioiThieu> ListAllPaging(string searchIntroduce, int page, int pageSize)
+        public IEnumerable<GioiThieu> ListAllPaging(string searchAbout, int page, int pageSize)
         {
             IQueryable<GioiThieu> model = db.GioiThieux;
 
-            if (!string.IsNullOrEmpty(searchIntroduce))
+            if (!string.IsNullOrEmpty(searchAbout))
             {
-                model = model.Where(x => x.noiDung.Contains(searchIntroduce));
+                model = model.Where(x => x.noiDung.Contains(searchAbout));
             }
 
             return model.OrderByDescending(x => x.ngayCapNhat).ToPagedList(page, pageSize);

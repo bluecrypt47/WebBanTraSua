@@ -144,7 +144,7 @@
     <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IntroduceController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\LoaiSanPhamController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -157,7 +157,7 @@
     <Compile Include="Models\DAO\ChiTietHoaDonDAO.cs" />
     <Compile Include="Models\DAO\FooterDAO.cs" />
     <Compile Include="Models\DAO\HoaDonDAO.cs" />
-    <Compile Include="Models\DAO\IntroduceDAO.cs" />
+    <Compile Include="Models\DAO\AboutDAO.cs" />
     <Compile Include="Models\DAO\LoaiSanPhamDAO.cs" />
     <Compile Include="Models\DAO\MenuDAO.cs" />
     <Compile Include="Models\DAO\SanPhamDAO.cs" />
@@ -531,13 +531,15 @@
     <Content Include="Views\Cart\Checkout.cshtml" />
     <Content Include="Views\Cart\Success.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\About\ListAbout.cshtml" />
+    <Content Include="Views\About\Create.cshtml" />
+    <Content Include="Views\About\Edit.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Footer\" />
-    <Folder Include="Views\Introduce\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

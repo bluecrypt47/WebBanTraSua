@@ -12,7 +12,8 @@
         public int id { get; set; }
 
         [Column(TypeName = "ntext")]
-        [Required]
+        [Required(ErrorMessage = "Không được để trống!")]
+        [StringLength(1000000, MinimumLength = 100, ErrorMessage = "Nội dung phải có trên 100 ký tự")]
         [Display(Name = "Nội dung")]
         public string noiDung { get; set; }
 
