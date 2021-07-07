@@ -69,5 +69,9 @@ namespace WebBanTraSua.Models.EF
                 .Property(e => e.sdt)
                 .IsUnicode(false);
         }
+
+        public System.Data.Entity.DbSet<WebBanTraSua.Models.RegisterModel> RegisterModels { get; set; }
+
+        public System.Data.Entity.DbSet<WebBanTraSua.Models.LoginUserModel> LoginUserModels { get; set; }
     }
 }

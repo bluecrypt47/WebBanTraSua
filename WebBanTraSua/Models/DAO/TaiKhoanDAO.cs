@@ -31,11 +31,11 @@ namespace WebBanTraSua.Models.DAO
             {
                 var user = db.TaiKhoans.Find(taiKhoan.id);
 
-                //user.email = taiKhoan.email;
-                //if(!string.IsNullOrEmpty(taiKhoan.matKhau))
-                //{
-                //    user.matKhau = taiKhoan.matKhau;
-                //}
+                user.email = taiKhoan.email;
+                if (!string.IsNullOrEmpty(taiKhoan.matKhau))
+                {
+                    user.matKhau = taiKhoan.matKhau;
+                }
                 user.maLoaiTaiKhoan = taiKhoan.maLoaiTaiKhoan;
                 user.tenNguoiDung = taiKhoan.tenNguoiDung;
                 user.diaChi = taiKhoan.diaChi;
@@ -126,6 +126,11 @@ namespace WebBanTraSua.Models.DAO
             {
                 return false;
             }
+        }
+
+        public bool CheckEmail(string email)
+        {
+            return db.TaiKhoans.Count(x => x.email == email) > 0;
         }
     }
 }
