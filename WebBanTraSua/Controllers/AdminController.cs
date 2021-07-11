@@ -126,11 +126,11 @@ namespace WebBanTraSua.Controllers
             {
                 var dao = new TaiKhoanDAO();
 
-                //if(!string.IsNullOrEmpty(user.matKhau))
-                //{
-                //    var encryptPass = Encrypt.MD5Hash(user.matKhau);
-                //    user.matKhau = encryptPass;
-                //}
+                if (!string.IsNullOrEmpty(user.matKhau))
+                {
+                    var encryptPass = Encrypt.MD5Hash(user.matKhau);
+                    user.matKhau = encryptPass;
+                }
 
                 var result = dao.edit(user);
 

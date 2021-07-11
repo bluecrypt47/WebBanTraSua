@@ -14,6 +14,18 @@ namespace WebBanTraSua
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "History Bill",
+                url: "lich-su-mua-hang/{idUser}",
+                defaults: new { controller = "ProductUser", action = "HistoryBuy", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Information User",
+                url: "thong-tin-tai-khoan/{idUser}",
+                defaults: new { controller = "LoginUser", action = "InformationUser", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "LoginUser",
                 url: "dang-nhap",
                 defaults: new { controller = "LoginUser", action = "LoginUser", id = UrlParameter.Optional }

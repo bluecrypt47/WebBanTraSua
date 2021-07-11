@@ -541,6 +541,8 @@
     <Content Include="Views\Bill\DetailsBill.cshtml" />
     <Content Include="Views\LoginUser\Register.cshtml" />
     <Content Include="Views\LoginUser\LoginUser.cshtml" />
+    <Content Include="Views\LoginUser\InformationUser.cshtml" />
+    <Content Include="Views\ProductUser\HistoryBuy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

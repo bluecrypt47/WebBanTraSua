@@ -63,5 +63,10 @@ namespace WebBanTraSua.Models.DAO
             db.SaveChanges();
             return hoaDon.maHoaDon;
         }
+
+        internal List<HoaDon> HistoryBuy(string email)
+        {
+            return db.HoaDons.Where(x => x.email == email).OrderByDescending(x=>x.ngayMua).ToList();
+        }
     }
 }

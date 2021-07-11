@@ -43,7 +43,7 @@ namespace WebBanTraSua.Controllers
 
                     var result = taikhoanDAO.insert(taiKhoan);
 
-                    if(result > 0)
+                    if (result > 0)
                     {
                         ViewBag.Success = "Đăng ký thành công!";
                         register = new RegisterModel();
@@ -93,7 +93,41 @@ namespace WebBanTraSua.Controllers
         {
             FormsAuthentication.SignOut();
             Session[CommenConstants.USER_SESSION] = null;
-            return Redirect("/");
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult InformationUser(long idUser)
+        {
+            var user = new TaiKhoanDAO().GetByID(idUser);
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult InformationUser(TaiKhoan user)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new TaiKhoanDAO();
+
+                if (!string.IsNullOrEmpty(user.matKhau))
+                {
+                    user.matKhau = Encrypt.MD5Hash(user.matKhau);
+                }
+
+                var result = dao.edit(user);
+
+                if (result)
+                {
+                    //ViewBag.Success("Cập nhật Thông tin thành công!!!", "success");
+                    //return RedirectToAction("InformationUser", "LoginUser");
+                    return Redirect("/");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Cập nhật Thông tin thất bại!!");
+                }
+            }
+            return View("InformationUser");
         }
     }
 }

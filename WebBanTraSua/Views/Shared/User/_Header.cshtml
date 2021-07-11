@@ -69,8 +69,9 @@
                     {
                         <a href="#" class="nav-link dropdown-toggle" style="color:#ffff; font-weight: 600;" data-toggle="dropdown">@session.Email</a>
                         <div class="dropdown-menu">
-                            <a href="/thong-tin-tai-khoan" class="dropdown-item">Thông tin tài khoản</a>
-                            @Html.ActionLink(" Đăng xuất", "Logout", "LoginUser")
+                            <a href="/lich-su-mua-hang/@session.Id" class="dropdown-item">Lịch sử mua hàng</a>
+                            <a href="/thong-tin-tai-khoan/@session.Id" class="dropdown-item">Thông tin tài khoản</a>
+                            <a href="/LoginUser/Logout" class="dropdown-item">Đăng xuất</a>
                         </div>
                     }
                 </div>

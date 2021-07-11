@@ -22,36 +22,40 @@
         @using (Html.BeginForm("Register", "LoginUser", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             if (ViewBag.Success != null)
             {
                 <div class="alert alert-success">@ViewBag.Success</div>
             }
+
             <div class="row">
                 <div class="col-lg-12" style="padding:0px 400px 0px 350px">
                     <div class="register-form">
                         <h2>Đăng Kí</h2>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="row">
                             <div class="col-md-6">
                                 @Html.LabelFor(model => model.email)
-                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                @*@Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })*@
+                                <input class="form-control text-box single-line" data-val="true" data-val-required="Không được để trống!"
+                                       id="email" name="email" type="email" value="">
                                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-                                @*<input class="form-control text-box single-line" data-val="true" data-val-required="Không được để trống!" id="email" name="email" type="email" value="">*@
 
                             </div>
                             <div class="col-md-6">
                                 @Html.LabelFor(model => model.password)
-                                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                                @*@Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })*@
+                                <input class="form-control text-box single-line" data-val="true" data-val-length="Mật khẩu phải có ít nhất 8 ký tự!"
+                                       data-val-length-max="1000" data-val-length-min="8" data-val-required="Không được để trống!" id="password" name="password"
+                                       type="password" value="">
                                 @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-                                @*<input class="form-control text-box single-line" data-val="true" data-val-length="Mật khẩu phải có ít nhất 8 ký tự!"
-                                    data-val-length-max="1000" data-val-length-min="8" data-val-required="Không được để trống!" id="password" name="password" type="password" value="">*@
+
                             </div>
                             <div class="col-md-6">
                                 @Html.LabelFor(model => model.rePassword)
-                                @Html.EditorFor(model => model.rePassword, new { htmlAttributes = new { @class = "form-control" } })
+                                @*@Html.EditorFor(model => model.rePassword, new { htmlAttributes = new { @class = "form-control" } })*@
+                                <input class="form-control text-box single-line" data-val="true" data-val-equalto="Không khớp với mật khẩu!!!" data-val-equalto-other="*.password"
+                                       data-val-required="Không được để trống!" id="rePassword" name="rePassword" type="password" value="">
                                 @Html.ValidationMessageFor(model => model.rePassword, "", new { @class = "text-danger" })
-                                @*<input class="form-control text-box single-line" data-val="true" data-val-equalto="Không khớp với mật khẩu!!!" data-val-equalto-other="*.password"
-                                    data-val-required="Không được để trống!" id="rePassword" name="rePassword" type="password" value="">*@
                             </div>
                             <div class="col-md-6">
                                 @Html.LabelFor(model => model.name)
