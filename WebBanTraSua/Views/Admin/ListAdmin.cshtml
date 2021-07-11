@@ -50,11 +50,12 @@
                                 <th>Xóa</th>
                             </tr>
                         </thead>
+                        @{ var i = 1;}
                         <tbody>
                             @foreach (var item in Model)
                             {
                                 <tr id="row-@item.id">
-                                    <td></td>
+                                    <td>@i.ToString()</td>
                                     <td>@(item.maLoaiTaiKhoan ? "Quản trị" : "Người dùng")</td>
                                     <td>@item.email</td>
                                     <td>@item.tenNguoiDung</td>
@@ -72,6 +73,7 @@
                                    })
                                     </td>
                                 </tr>
+                                i++;
                             }
                         </tbody>
                     </table>

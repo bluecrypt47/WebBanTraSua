@@ -37,15 +37,5 @@ namespace WebBanTraSua.Controllers
             ViewBag.Categorys = new LoaiSanPhamDAO().ListTypeProducts();
             return View(typeProducts);
         }
-
-        public ActionResult HistoryBuy(long idUser)
-        {
-            var user = new TaiKhoanDAO().GetByID(idUser);
-            var dao = new HoaDonDAO();
-
-            List<HoaDon> HistoryBuy = dao.HistoryBuy(user.email);
-
-            return View(HistoryBuy);
-        }
     }
 }

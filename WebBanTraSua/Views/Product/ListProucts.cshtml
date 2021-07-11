@@ -52,11 +52,13 @@
                                 <th>Xóa</th>
                             </tr>
                         </thead>
+
+                        @{var i = 1; }
                         <tbody>
                             @foreach (var item in Model)
                             {
                                 <tr id="row-@item.maSanPham">
-                                    <td></td>
+                                    <td>@i.ToString()</td>
                                     <td>@item.tenSanPham</td>
                                     <td> <img src="~/Content/assets/img/anh/@item.hinhAnh" alt="ảnh" width="100" /></td>
                                     <td>@item.giaBan</td>
@@ -77,6 +79,7 @@
                                    })
                                     </td>
                                 </tr>
+                                i++;
                             }
                         </tbody>
                     </table>

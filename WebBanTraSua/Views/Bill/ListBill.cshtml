@@ -49,11 +49,12 @@
                                 <th>Xóa</th>
                             </tr>
                         </thead>
+                        @{ var i = 1;}
                         <tbody>
                             @foreach (var item in Model)
                             {
                                 <tr id="row-@item.maHoaDon">
-                                    <td></td>
+                                    <td>@i.ToString()</td>
                                     <td>@item.email</td>
                                     <td>@item.tenNguoiMua</td>
                                     <td>@item.sdt</td>
@@ -72,6 +73,7 @@
                                    })
                                     </td>
                                 </tr>
+                                i++;
                             }
                         </tbody>
                     </table>

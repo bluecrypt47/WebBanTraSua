@@ -1,18 +1,15 @@
 ﻿@model IEnumerable<WebBanTraSua.Models.EF.ChiTietHoaDon>
 
 @{
-    ViewBag.Title = "Chi Tiết Hóa Đơn";
-    Layout = "~/Views/Shared/Admin/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Chi tiết Lịch sử mua hàng";
+    Layout = "~/Views/Shared/User/_Layout.cshtml";
 }
 
-@section header {
-    Chi Tiết Hóa Đơn
-}
-<div class="row">
-    <div class="col-lg-12">
+<div class="row" style="padding-left:200px;">
+    <div class="col-lg-10">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Danh sách Chi Tiết Hóa Đơn
+                <h2>Danh sách Chi tiết Lịch sử mua hàng</h2>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -48,7 +45,6 @@
                         </tbody>
                     </table>
                 </div>
-                <a class="btn btn-success" href="~/Bill/ListBill"><i class="fa fa-caret-left" style="font-size:15px;"></i> Quay lại</a>
                 <!-- /.table-responsive -->
             </div>
             <!-- /.panel-body -->

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
+using WebBanTraSua.Code;
 using WebBanTraSua.Common;
 using WebBanTraSua.Models;
 using WebBanTraSua.Models.DAO;
@@ -27,6 +28,7 @@ namespace WebBanTraSua.Controllers
             return View(listItem);
         }
 
+        // Thêm mặt hàng vào Giỏ
         public ActionResult AddCart(long maSanPham, int soLuong)
         {
             var product = new SanPhamDAO().GetByID(maSanPham);
@@ -74,6 +76,7 @@ namespace WebBanTraSua.Controllers
             return RedirectToAction("Index");
         }
 
+        // Cập nhật lại giỏ hành
         public JsonResult Update(string cartModel)
         {
             var jsonCart = new JavaScriptSerializer().Deserialize<List<CartModel>>(cartModel);
@@ -117,6 +120,7 @@ namespace WebBanTraSua.Controllers
             });
         }
 
+        // Thanh toán
         public ActionResult Checkout()
         {
             var cart = Session[CommenConstants.CartSession];
@@ -125,6 +129,19 @@ namespace WebBanTraSua.Controllers
             {
                 listItem = (List<CartModel>)cart;
             }
+
+            //var sessionUser = Session[CommenConstants.USER_SESSION];
+            //sessionUser = new TaiKhoanSession();
+            //var user = new TaiKhoanDAO().getByEmail(sessionUser.);
+            //var bill = new HoaDon();
+
+            //if (user != null)
+            //{
+            //    bill.email = user.email;
+            //    bill.tenNguoiMua = user.tenNguoiDung;
+            //    bill.diaChi = user.diaChi;
+            //    bill.sdt = user.sdt;
+            //}
 
             return View(listItem);
         }

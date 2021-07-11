@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using WebBanTraSua.Common;
 using WebBanTraSua.Models;
 using WebBanTraSua.Models.DAO;
+using WebBanTraSua.Models.EF;
 
 namespace WebBanTraSua.Controllers
 {
@@ -34,6 +35,23 @@ namespace WebBanTraSua.Controllers
 
             SetAlert("Xóa Hóa đơn thành công!!!", "success");
             return RedirectToAction("ListBill", "Bill");
+        }
+
+        public ActionResult HistoryBuy(long idUser)
+        {
+            var user = new TaiKhoanDAO().GetByID(idUser);
+            var dao = new HoaDonDAO();
+
+            List<HoaDon> HistoryBuy = dao.HistoryBuy(user.email);
+
+            return View(HistoryBuy);
+        }
+
+        public ActionResult DetailHistoryBuy(long idBill)
+        {
+            var dao = new ChiTietHoaDonDAO();
+            var model = dao.GetByIDBill(idBill);
+            return View(model);
         }
     }
 }
