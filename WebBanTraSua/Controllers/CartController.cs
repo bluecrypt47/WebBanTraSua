@@ -73,7 +73,7 @@ namespace WebBanTraSua.Controllers
                 // Gán listItem vào session
                 Session[CommenConstants.CartSession] = listItem;
             }
-            return RedirectToAction("Index");
+            return Redirect("/");
         }
 
         // Cập nhật lại giỏ hành
@@ -149,43 +149,51 @@ namespace WebBanTraSua.Controllers
         [HttpPost]
         public ActionResult Checkout(string email, string name, string address, string phoneNumber, string note)
         {
-            var bill = new HoaDon();
-
-            bill.email = email;
-            bill.tenNguoiMua = name;
-            bill.diaChi = address;
-            bill.sdt = phoneNumber;
-            bill.ghiChu = note;
-            bill.ngayMua = DateTime.Now;
-
             try
             {
-                var id = new HoaDonDAO().InsertBill(bill);
+                var bill = new HoaDon();
 
-                var cart = (List<CartModel>)Session[CommenConstants.CartSession];
-                var chiTietHoaDonDAO = new ChiTietHoaDonDAO();
+                bill.email = email;
+                bill.tenNguoiMua = name;
+                bill.diaChi = address;
+                bill.sdt = phoneNumber;
+                bill.ghiChu = note;
+                bill.ngayMua = DateTime.Now;
 
-                foreach (var item in cart)
+                try
                 {
-                    var chiTietHoaDon = new ChiTietHoaDon();
+                    var id = new HoaDonDAO().InsertBill(bill);
 
-                    chiTietHoaDon.maSanPham = item.SanPham.maSanPham;
-                    chiTietHoaDon.maHoaDon = id;
-                    chiTietHoaDon.soLuong = item.SoLuong;
-                    chiTietHoaDon.giaBan = item.SanPham.giaBan;
-                    chiTietHoaDon.thanhTien = (item.SoLuong * item.SanPham.giaBan);
+                    var cart = (List<CartModel>)Session[CommenConstants.CartSession];
+                    var chiTietHoaDonDAO = new ChiTietHoaDonDAO();
 
-                    chiTietHoaDonDAO.InsertBill(chiTietHoaDon);
+                    foreach (var item in cart)
+                    {
+                        var chiTietHoaDon = new ChiTietHoaDon();
+
+                        chiTietHoaDon.maSanPham = item.SanPham.maSanPham;
+                        chiTietHoaDon.maHoaDon = id;
+                        chiTietHoaDon.soLuong = item.SoLuong;
+                        chiTietHoaDon.giaBan = item.SanPham.giaBan;
+                        chiTietHoaDon.thanhTien = (item.SoLuong * item.SanPham.giaBan);
+
+                        chiTietHoaDonDAO.InsertBill(chiTietHoaDon);
+                    }
                 }
-            }
-            catch (Exception ex)
+                catch (Exception ex)
+                {
+                    throw;
+                }
+
+                Session[CommenConstants.CartSession] = null;
+
+                return Redirect("/hoan-thanh");
+            }catch(Exception ex)
             {
-                throw;
+                ViewBag.Error = "Vui lòng điền đủ thông tin yêu cầu!";
+                return View("Checkout");
             }
-
-            Session[CommenConstants.CartSession] = null;
-
-            return Redirect("/hoan-thanh");
+            
         }
 
         public ActionResult Success()
