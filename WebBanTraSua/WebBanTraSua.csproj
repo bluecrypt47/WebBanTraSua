@@ -221,6 +221,7 @@
     <Content Include="Content\assetsAdmin\js\morris.min.js" />
     <Content Include="Content\assetsAdmin\js\raphael.min.js" />
     <Content Include="Content\assetsAdmin\js\startmin.js" />
+    <Content Include="Content\assets\css\jquery-ui.css" />
     <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\img\321.png" />
     <Content Include="Content\assets\img\anh\ba-bap-rang.jpg" />
@@ -442,6 +443,8 @@
     <Content Include="Content\assets\img\slider-3.jpg" />
     <Content Include="Content\assets\img\ssl.svg" />
     <Content Include="Content\assets\js\Controller\CartController.js" />
+    <Content Include="Content\assets\js\Controller\HomeController.js" />
+    <Content Include="Content\assets\js\jquery-ui.js" />
     <Content Include="Content\assets\js\main.js" />
     <Content Include="Content\assets\lib\easing\easing.js" />
     <Content Include="Content\assets\lib\easing\easing.min.js" />
@@ -544,6 +547,7 @@
     <Content Include="Views\LoginUser\InformationUser.cshtml" />
     <Content Include="Views\Bill\HistoryBuy.cshtml" />
     <Content Include="Views\Bill\DetailHistoryBuy.cshtml" />
+    <Content Include="Views\ProductUser\SearchProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

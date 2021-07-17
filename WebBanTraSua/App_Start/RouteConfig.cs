@@ -14,6 +14,12 @@ namespace WebBanTraSua
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Search",
+                url: "tim-kiem",
+                defaults: new { controller = "ProductUser", action = "SearchProduct", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Details History Bill",
                 url: "lich-su-mua-hang/chi-tiet-hoa-don/{idBill}",
                 defaults: new { controller = "Bill", action = "DetailHistoryBuy", id = UrlParameter.Optional }

@@ -16,6 +16,20 @@ namespace WebBanTraSua.Models.DAO
             db = new WTSDBContext();
         }
 
+        // Danh sách tên sản phẩm
+        public List<string> ListName(string name)
+        {
+            return db.SanPhams.Where(x => x.tenSanPham.Contains(name)).Select(x => x.tenSanPham).ToList();
+        }
+
+        // tìm kiếm sản phẩm
+        public IEnumerable<SanPham> Search(string searchNameProduct, int page, int pageSize)
+        {
+
+            return db.SanPhams.Where(x => x.tenSanPham.Contains(searchNameProduct)).
+                    OrderByDescending(x => x.ngayCapNhat).ToPagedList(page, pageSize);
+        }
+
         // List all sản phẩm 
         public IEnumerable<SanPham> AllProducts(int page, int pageSize)
         {

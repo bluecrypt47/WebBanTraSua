@@ -37,5 +37,24 @@ namespace WebBanTraSua.Controllers
             ViewBag.Categorys = new LoaiSanPhamDAO().ListTypeProducts();
             return View(typeProducts);
         }
+
+        public JsonResult ListName(string nameProduct)
+        {
+            var data = new SanPhamDAO().ListName(nameProduct);
+
+            return Json(new
+            {
+                data = data,
+                status = true
+            },JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SearchProduct(string searchNameProduct, int page = 1, int pageSize = 12)
+        {
+            var searchProducts = new SanPhamDAO();
+            var model = searchProducts.Search(searchNameProduct, page, pageSize);
+            ViewBag.searchNameProduct = searchNameProduct;
+            return View(model);
+        }
     }
 }
