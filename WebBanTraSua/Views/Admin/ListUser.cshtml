@@ -61,8 +61,8 @@
                                     <td>@item.sdt</td>
                                     <td>@item.ngayTao</td>
                                     <td>@item.ngayCapNhat</td>
-                                    <td><a href="/Admin/Edit/@item.id"><i class="fa fa-edit" style="font-size:30px;"></i></a></td>
-                                    <td>
+                                    <td style="text-align:center;"><a href="/Admin/Edit/@item.id"><i class="fa fa-edit" style="font-size:30px;"></i></a></td>
+                                    <td style="text-align:center;">
                                         @Ajax.ActionLink("Xóa", "Delete", new { @id = item.id }, new AjaxOptions
                                    {
                                        Confirm = "Bạn chắc chắn muốn xóa Người dùng này?",

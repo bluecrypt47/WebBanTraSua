@@ -46,7 +46,7 @@
                                 <th>Số lượng</th>
                                 <th>Tổng tiền</th>
                                 <th>Xem chi tiết</th>
-                                <th>Xóa</th>
+                                @*<th>Xóa</th>*@
                             </tr>
                         </thead>
                         @{ var i = 1;}
@@ -63,15 +63,15 @@
                                     <td>@item.ngayMua</td>
                                     <td>@item.soLuong</td>
                                     <td>@item.tongTien</td>
-                                    <td><a href="/Bill/DetailsBill/@item.maHoaDon"><i class="fa fa-search-plus" style="font-size:30px;"></i></a></td>
-                                    <td>
+                                    <td style="text-align:center;"><a href="/Bill/DetailsBill/@item.maHoaDon"><i class="fa fa-search-plus" style="font-size:30px;"></i></a></td>
+                                    @*<td>
                                         @Ajax.ActionLink("Xóa", "Delete", new { @id = item.maHoaDon }, new AjaxOptions
                                    {
                                        Confirm = "Bạn chắc chắn muốn xóa Hóa đơn này?",
                                        OnComplete = "$(#'row-" + @item.maHoaDon + "').remove()",
                                        HttpMethod = "Delete"
                                    })
-                                    </td>
+                                    </td>*@
                                 </tr>
                                 i++;
                             }

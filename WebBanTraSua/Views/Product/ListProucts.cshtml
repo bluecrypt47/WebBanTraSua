@@ -69,8 +69,8 @@
                                     <td>@(item.sanPhamNoiBat ? "Nổi bật" : "")</td>
                                     <td>@item.ngayTao</td>
                                     <td>@item.ngayCapNhat</td>
-                                    <td><a href="/Product/Edit/@item.maSanPham"><i class="fa fa-edit" style="font-size:30px;"></i></a></td>
-                                    <td>
+                                    <td style="text-align:center;"><a href="/Product/Edit/@item.maSanPham"><i class="fa fa-edit" style="font-size:30px;"></i></a></td>
+                                    <td style="text-align:center;">
                                         @Ajax.ActionLink("Xóa", "Delete", new { @id = item.maSanPham }, new AjaxOptions
                                    {
                                        Confirm = "Bạn chắc chắn muốn xóa Sản phẩm này?",

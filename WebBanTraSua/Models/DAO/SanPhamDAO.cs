@@ -19,7 +19,7 @@ namespace WebBanTraSua.Models.DAO
         // Danh sách tên sản phẩm
         public List<string> ListName(string name)
         {
-            return db.SanPhams.Where(x => x.tenSanPham.Contains(name)).Select(x => x.tenSanPham).ToList();
+            return db.SanPhams.Where(x => x.tenSanPham.Contains(name)).Select(x => x.tenSanPham).Take(12).ToList();
         }
 
         // tìm kiếm sản phẩm
