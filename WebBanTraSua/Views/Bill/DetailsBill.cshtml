@@ -39,9 +39,9 @@
                                     <td> <img src="~/Content/assets/img/anh/@item.SanPham.hinhAnh" alt="ảnh" width="100" /></td>
                                     <td>@item.SanPham.tenSanPham</td>
                                     <td>@item.soLuong</td>
-                                    <td>@item.SanPham.giaBan</td>
+                                    <td>@String.Format("{0:0,0}", item.SanPham.giaBan)<span>₫</span></td>
                                     <td>@item.SanPham.dvt</td>
-                                    <td>@item.thanhTien</td>
+                                    <td>@String.Format("{0:0,0}", item.thanhTien)<span>₫</span></td>
                                 </tr>
                                 i++;
                             }

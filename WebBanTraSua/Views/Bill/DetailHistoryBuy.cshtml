@@ -31,15 +31,15 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr id="row-@item.maHoaDon">
-                                    <td>@i.ToString()</td>
-                                    <td> <img src="~/Content/assets/img/anh/@item.SanPham.hinhAnh" alt="ảnh" width="100" /></td>
-                                    <td>@item.SanPham.tenSanPham</td>
-                                    <td>@item.soLuong</td>
-                                    <td>@item.SanPham.giaBan</td>
-                                    <td>@item.SanPham.dvt</td>
-                                    <td>@item.thanhTien</td>
-                                </tr>
+                            <tr id="row-@item.maHoaDon">
+                                <td>@i.ToString()</td>
+                                <td> <img src="~/Content/assets/img/anh/@item.SanPham.hinhAnh" alt="ảnh" width="100" /></td>
+                                <td>@item.SanPham.tenSanPham</td>
+                                <td>@item.soLuong</td>
+                                <td>@String.Format("{0:0,0}", item.SanPham.giaBan)<span>₫</span></td>
+                                <td>@item.SanPham.dvt</td>
+                                <td>@String.Format("{0:0,0}", item.thanhTien)<span>₫</span></td>
+                            </tr>
                                 i++;
                             }
                         </tbody>

@@ -84,3 +84,4 @@ E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\PagedList.dll
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\PagedList.Mvc.dll
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\PagedList.xml
 E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\bin\PagedList.Mvc.xml
+E:\3\LTW\WBTS\WebBanTraSua\WebBanTraSua\obj\Debug\WebBanTraSua.csprojAssemblyReference.cache
