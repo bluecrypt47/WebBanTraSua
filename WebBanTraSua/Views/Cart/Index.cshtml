@@ -40,6 +40,7 @@
                                 </thead>
                                 @{ var i = 1;
                                     double total = 0;
+                                    int totalQuantity = 0;
                                 }
                                 <tbody class="align-middle">
 
@@ -66,6 +67,10 @@
                                         </tr>
                                         i++;
                                         total += (item.SanPham.giaBan.GetValueOrDefault(0) * item.SoLuong);
+                                        totalQuantity += item.SoLuong;
+                                        Session["tongtien"] = total;
+                                        Session["tongSoLuong"] = totalQuantity;
+
                                     }
                             </table>
                             <table class="table table-bordered">

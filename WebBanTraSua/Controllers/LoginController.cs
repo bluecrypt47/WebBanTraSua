@@ -28,7 +28,6 @@ namespace WebBanTraSua.Controllers
                 var result = dao.Login(login.Email, Encrypt.MD5Hash(login.MatKhau));
                 if (result && ModelState.IsValid)
                 {
-                    //SessionHelper.setSession(new TaiKhoanSession() { email = login.Email });
                     var user = dao.getByEmail(login.Email);
                     var userSession = new UserLogin();
                     userSession.Email = user.email;

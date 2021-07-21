@@ -12,7 +12,7 @@
         });
 
         $('#btnUpdate').off('click').on('click', function () {
-            var listProduct = $('.quantity');
+            var listProduct = $('.quantity'); //sau khi ấn vào js lấy cái class có tên là quantity ra thành 1 array
             var cartList = [];
             $.each(listProduct, function (i, item) {
                 cartList.push({
@@ -25,7 +25,7 @@
 
             $.ajax({
                 url: '/Cart/Update',
-                data: { cartModel: JSON.stringify(cartList) },
+                data: { cartModel: JSON.stringify(cartList) }, // ép kiểu sang string
                 dataType: 'json',
                 type: 'POST',
                 success: function (res) {

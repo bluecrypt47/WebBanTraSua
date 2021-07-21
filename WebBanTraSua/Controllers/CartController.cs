@@ -29,7 +29,7 @@ namespace WebBanTraSua.Controllers
         }
 
         // Thêm mặt hàng vào Giỏ
-        public ActionResult AddCart(long maSanPham, int soLuong)
+        public ActionResult AddCart(long maSanPham, int soLuong, string returnUrl)
         {
             var product = new SanPhamDAO().GetByID(maSanPham);
             var cart = Session[CommenConstants.CartSession];
@@ -73,7 +73,7 @@ namespace WebBanTraSua.Controllers
                 // Gán listItem vào session
                 Session[CommenConstants.CartSession] = listItem;
             }
-            return Redirect("/");
+            return Redirect(returnUrl);
         }
 
         // Cập nhật lại giỏ hành
@@ -138,6 +138,8 @@ namespace WebBanTraSua.Controllers
         {
             try
             {
+                 
+
                 var bill = new HoaDon();
 
                 bill.email = email;
@@ -145,6 +147,8 @@ namespace WebBanTraSua.Controllers
                 bill.diaChi = address;
                 bill.sdt = phoneNumber;
                 bill.ghiChu = note;
+                bill.soLuong = (int)Session["tongSoLuong"];
+                bill.tongTien = (double)Session["tongtien"];
                 bill.ngayMua = DateTime.Now;
 
                 try
