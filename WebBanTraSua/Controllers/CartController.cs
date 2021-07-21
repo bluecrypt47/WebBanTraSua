@@ -130,19 +130,6 @@ namespace WebBanTraSua.Controllers
                 listItem = (List<CartModel>)cart;
             }
 
-            //var sessionUser = Session[CommenConstants.USER_SESSION];
-            //sessionUser = new TaiKhoanSession();
-            //var user = new TaiKhoanDAO().getByEmail(sessionUser.);
-            //var bill = new HoaDon();
-
-            //if (user != null)
-            //{
-            //    bill.email = user.email;
-            //    bill.tenNguoiMua = user.tenNguoiDung;
-            //    bill.diaChi = user.diaChi;
-            //    bill.sdt = user.sdt;
-            //}
-
             return View(listItem);
         }
 

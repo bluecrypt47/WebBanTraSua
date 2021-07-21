@@ -25,7 +25,6 @@ namespace WebBanTraSua.Models.DAO
         // tìm kiếm sản phẩm
         public IEnumerable<SanPham> Search(string searchNameProduct, int page, int pageSize)
         {
-
             return db.SanPhams.Where(x => x.tenSanPham.Contains(searchNameProduct)).
                     OrderByDescending(x => x.ngayCapNhat).ToPagedList(page, pageSize);
         }

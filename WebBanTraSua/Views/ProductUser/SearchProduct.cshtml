@@ -50,16 +50,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Pagination Start -->
-
-                    <div class="col-md-12">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                @Html.PagedListPager(Model, page => Url.Action("searchProducts", new { page }))
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- Pagination Start -->
                 }
             }
             else
@@ -69,6 +59,15 @@
                 </div>
             }
 
+            <!-- Pagination Start -->
+            <div class="col-md-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        @Html.PagedListPager(Model, page => Url.Action("searchProducts", new { page }))
+                    </ul>
+                </nav>
+            </div>
+            <!-- Pagination Start -->
 
 
         </div>

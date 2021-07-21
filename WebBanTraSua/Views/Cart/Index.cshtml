@@ -34,11 +34,13 @@
                                         <th>Sản phẩm</th>
                                         <th>Giá bán</th>
                                         <th>Số lượng</th>
-                                        <th>Tổng cộng</th>
+                                        <th>Tổng giá</th>
                                         <th>Xóa</th>
                                     </tr>
                                 </thead>
-                                @{ var i = 1;}
+                                @{ var i = 1;
+                                    double total = 0;
+                                }
                                 <tbody class="align-middle">
 
                                     @foreach (var item in Model)
@@ -51,7 +53,7 @@
                                                     <p>@item.SanPham.tenSanPham</p>
                                                 </div>
                                             </td>
-                                            <td>@item.SanPham.giaBan.GetValueOrDefault(0)<span>₫</span></td>
+                                            <td>@String.Format("{0:0,0}", item.SanPham.giaBan.GetValueOrDefault(0))<span>₫</span></td>
                                             <td>
                                                 <div class="qty">
                                                     <button class="btn-minus"><i class="fa fa-minus"></i></button>
@@ -59,14 +61,18 @@
                                                     <button class="btn-plus"><i class="fa fa-plus"></i></button>
                                                 </div>
                                             </td>
-                                            <td>@(item.SanPham.giaBan.GetValueOrDefault(0) * item.SoLuong)<span>₫</span></td>
+                                            <td>@String.Format("{0:0,0}", item.SanPham.giaBan.GetValueOrDefault(0) * item.SoLuong)<span>₫</span></td>
                                             <td><a href="#" data-id="@item.SanPham.maSanPham" class="btn-delete"><i class="fa fa-trash"></i></a></td>
                                         </tr>
                                         i++;
+                                        total += (item.SanPham.giaBan.GetValueOrDefault(0) * item.SoLuong);
                                     }
-
-
-                                </tbody>
+                            </table>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th style="width:1065px;"><h3><b>Tổng cộng </b></h3></th>
+                                    <td><h3><b>@String.Format("{0:0,0}", total)<span>₫</span></b> </h3></td>
+                                </tr>
                             </table>
                             <div style="text-align:center; padding-top: 20px;">
                                 <button id="btnContinue" class="btn">Tiếp Tục Mua Hàng</button>

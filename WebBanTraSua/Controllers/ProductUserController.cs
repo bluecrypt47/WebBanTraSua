@@ -51,10 +51,9 @@ namespace WebBanTraSua.Controllers
 
         public ActionResult SearchProduct(string searchNameProduct, int page = 1, int pageSize = 12)
         {
-            var searchProducts = new SanPhamDAO();
-            var model = searchProducts.Search(searchNameProduct, page, pageSize);
+            var searchProducts = new SanPhamDAO().Search(searchNameProduct, page, pageSize);
             ViewBag.searchNameProduct = searchNameProduct;
-            return View(model);
+            return View(searchProducts);
         }
     }
 }
