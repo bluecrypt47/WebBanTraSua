@@ -25,7 +25,7 @@ namespace WebBanTraSua.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new TaiKhoanDAO();
-                var result = dao.Login(login.Email, Encrypt.MD5Hash(login.MatKhau));
+                var result = dao.LoginAdmin(login.Email, Encrypt.MD5Hash(login.MatKhau));
                 if (result && ModelState.IsValid)
                 {
                     var user = dao.getByEmail(login.Email);

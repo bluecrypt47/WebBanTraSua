@@ -90,6 +90,28 @@ namespace WebBanTraSua.Models.DAO
             return db.TaiKhoans.Find(id);
         }
 
+        // Đăng nhập admin
+        public bool LoginAdmin(string email, string password)
+        {
+            object[] sqlParam =
+            {
+                new SqlParameter("@email", email),
+                new SqlParameter("@matkhau", password)
+            };
+
+            //var result = db.Database.SqlQuery<bool>("login @email, @matkhau", sqlParam).SingleOrDefault();
+
+            var result = db.TaiKhoans.Count(x => x.email == email && x.matKhau == password && x.maLoaiTaiKhoan == true);
+            if (result > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         // Đăng nhập
         public bool Login(string email, string password)
         {
